@@ -1,0 +1,11 @@
+############################################################
+# This file is managed by Chef, and is refreshed regularly #
+#                 Edit at your own peril!                  #
+############################################################
+## <%= @params['comment'] %>
+
+# Environment Settings
+PATH=<%= @params['path'] %>
+
+# Job Definition
+<%= @params['minute'] %> <%= @params['hour'] %> <%= @params['monthday'] %> <%= @params['month'] %> <%= @params['weekday'] %>   <%= @params['run_user'] %>  <%= @params['command'] %>
