@@ -27,10 +27,10 @@ default_action :create
 
 action :create do
   template "#{new_resource.cron_dir}/#{new_resource.file_name}" do
-    source 'cronfile.erb'
-    owner "#{new_resource.file_owner}"
-    group "#{new_resource.file_group}"
-    mode "#{new_resource.file_mode}"
+    source  'cronfile.erb'
+    owner   new_resource.file_owner
+    group   new_resource.file_group
+    mode    new_resource.file_mode
     variables(
       command: new_resource.command,
       time:    new_resource.time,
@@ -38,7 +38,7 @@ action :create do
       comment: new_resource.comment,
       path:    new_resource.path
     )
-    action :create
+    action  :create
   end
 
   if new_resource.check_package
@@ -52,13 +52,10 @@ action :create do
       action [:enable, :start]
     end
   end
-
-
 end
 
 action :delete do
   file "#{new_resource.cron_dir}/#{new_resource.file_name}" do
     action :delete
   end
-
 end
