@@ -13,6 +13,7 @@ property :command,         String, required: true
 property :time,            String, required: true
 property :user,            String, default: 'root'
 property :comment,         String
+property :mailto,          String
 property :path,            String, default: '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 
 # package
