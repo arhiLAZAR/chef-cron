@@ -15,6 +15,7 @@ property :user,            String, default: 'root'
 property :comment,         String
 property :mailto,          String
 property :path,            String, default: '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+property :environment,     Hash
 
 # package
 property :package_name,    String, default: 'cron'
@@ -33,11 +34,13 @@ action :create do
     group   new_resource.file_group
     mode    new_resource.file_mode
     variables(
-      command: new_resource.command,
-      time:    new_resource.time,
-      user:    new_resource.user,
-      comment: new_resource.comment,
-      path:    new_resource.path
+      command:     new_resource.command,
+      time:        new_resource.time,
+      user:        new_resource.user,
+      comment:     new_resource.comment,
+      mailto:      new_resource.mailto,
+      path:        new_resource.path,
+      environment: new_resource.environment
     )
     action  :create
   end

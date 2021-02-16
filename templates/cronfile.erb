@@ -11,6 +11,11 @@ MAILTO=<%= @mailto %>
 
 # Environment Settings
 PATH=<%= @path %>
+<% if @environment -%>
+<% @environment.each do |key, value| -%>
+<%= key %>=<%= value %>
+<% end -%>
+<% end -%>
 
 # Job Definition
 <%= @time %>   <%= @user %>  <%= @command %>
