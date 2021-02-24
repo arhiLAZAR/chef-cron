@@ -29,3 +29,8 @@ describe file('/etc/cron.d/chef_crontab') do
   its('content') { should match('^# Simple testing job$') }
   its('content') { should match('^1 2 3 4 5   nobody  echo "Test!"$') }
 end
+
+describe file('/tmp/test.txt') do
+  sleep(60)
+  its('content') { should match('^value is bar$') }
+end
