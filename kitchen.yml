@@ -30,7 +30,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[chef-cron::tests]
+      - recipe[chef_cron::tests]
     verifier:
       inspec_tests:
         - test/integration/default

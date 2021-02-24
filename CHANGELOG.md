@@ -1,6 +1,6 @@
-# chef-cron CHANGELOG
+# chef_cron CHANGELOG
 
-This file is used to list changes made in each version of the chef-cron cookbook.
+This file is used to list changes made in each version of the chef_cron cookbook.
 
 # 0.1.0
 

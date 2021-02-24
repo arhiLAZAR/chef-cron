@@ -1,12 +1,12 @@
 #
-# Cookbook:: chef-cron
+# Cookbook:: chef_cron
 # Spec:: default
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'chef-cron::default' do
+describe 'chef_cron::default' do
   context 'When all attributes are default, on Ubuntu 18.04' do
     # for a complete list of available platforms and versions see:
     # https://github.com/chefspec/fauxhai/blob/master/PLATFORMS.md

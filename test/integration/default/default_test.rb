@@ -1,4 +1,4 @@
-# InSpec test for recipe chef-cron::default
+# InSpec test for recipe chef_cron::default
 
 # The InSpec reference, with examples and extensive documentation, can be
 # found at https://www.inspec.io/docs/reference/resources/
