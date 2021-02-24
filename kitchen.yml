@@ -25,13 +25,30 @@ verifier:
   name: inspec
 
 platforms:
+  - name: ubuntu-16.04
   - name: ubuntu-18.04
+  - name: ubuntu-20.04
 
 suites:
   - name: default
     run_list:
-      - recipe[chef_cron::tests]
+      - recipe[chef_cron::default]
     verifier:
       inspec_tests:
         - test/integration/default
     attributes:
+      chef_cron:
+        mailto: 'tester@example.com'
+        path: '/opt/python/bin'
+        environment:
+          VAR: 'value'
+          FOO: 'bar'
+        jobs:
+          echo_job:
+            command: 'echo "${VAR} is ${FOO}" > /tmp/test.txt'
+            time: '* * * * *'
+          test_job:
+            command: 'echo "Test!"'
+            time: '1 2 3 4 5'
+            user: 'nobody'
+            comment: "Simple testing job"
