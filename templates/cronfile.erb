@@ -2,13 +2,10 @@
 # This file is managed by Chef, and is refreshed regularly #
 #                       DO NOT EDIT!                       #
 ############################################################
-<% if @comment -%>
-## <%= @comment %>
-<% end -%>
 <% if @mailto -%>
 MAILTO=<%= @mailto %>
-<% end -%>
 
+<% end -%>
 # Environment Settings
 PATH=<%= @path %>
 <% if @environment -%>
@@ -17,5 +14,14 @@ PATH=<%= @path %>
 <% end -%>
 <% end -%>
 
-# Job Definition
-<%= @time %>   <%= @user %>  <%= @command %>
+# Jobs Definition
+<% if @jobs -%>
+<% @jobs.each do |name, job| -%>
+<% unless job['time'] and job['command'] -%>
+<% fail("Fields 'time' and 'command' are obligatory in the job '#{name}'!") %>
+<% end -%>
+# <%= job['comment'] ? job['comment'] : name %>
+<% user = job['user'] ? job['user'] : @default_user -%>
+<%= job['time'] %>   <%= user %>  <%= job['command'] %>
+<% end -%>
+<% end -%>
