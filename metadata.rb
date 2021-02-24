@@ -1,6 +1,6 @@
 name 'chef_cron'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Anton Evdokimov'
+maintainer_email 'arhiLAZAR@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures chef_cron'
 long_description 'Installs/Configures chef_cron'
@@ -11,10 +11,10 @@ chef_version '>= 13.0'
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
 #
-# issues_url 'https://github.com/<insert_org_here>/chef_cron/issues'
+issues_url 'https://github.com/arhiLAZAR/chef_cron/issues'
 
 # The `source_url` points to the development repository for this cookbook.  A
 # `View Source` link will be displayed on this cookbook's page when uploaded to
 # a Supermarket.
 #
-# source_url 'https://github.com/<insert_org_here>/chef_cron'
+source_url 'https://github.com/arhiLAZAR/chef_cron'
